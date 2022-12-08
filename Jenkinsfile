@@ -5,19 +5,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'cd tpdevops;mvn clean'
+                sh 'mvn clean'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'cd tpdevops;mvn test'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'cd tpdevops;mvn package'
+                sh 'mvn package'
             }
         }
     }
